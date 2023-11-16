@@ -40,5 +40,3 @@ app.get("/api/home", (req, res) => {
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`)
 })
-
-asdfnkjasdn fk
