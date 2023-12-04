@@ -1,0 +1,40 @@
+.main-page {
+  background-color: rgba(65, 125, 240, 1);
+  height: 100%;
+  width: 100%;
+}
+.main-page__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-page__title {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main-page__subtitle {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 840px) {
+  .main-page__title {
+    font-size: 48px;
+  }
+  .main-page__subtitle {
+    font-size: 18px;
+  }
+}
