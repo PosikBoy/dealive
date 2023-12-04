@@ -1,0 +1,102 @@
+.mini-form {
+  width: 400px;
+  height: 300px;
+}
+
+.mini-form__body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mini-form__title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.mini-form__pickup,
+.mini-form__destination {
+  width: 100%;
+}
+.mini-form__pick-up-title,
+.mini-form__destination-title {
+  color: #000;
+
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.mini-field {
+  margin-top: 4px;
+  border-radius: 7px;
+  border-bottom: 1px solid black;
+  background: rgba(255, 0, 0, 0.13);
+  padding: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.mini-form__button {
+  width: 180px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.13);
+  border-radius: 7px;
+  border-bottom: 1px solid black;
+}
+
+.mini-form__link {
+  color: black;
+  font-weight: 600;
+}
+
+.field:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transition: all 0.8s ease;
+}
+
+.field:focus {
+  background: rgba(255, 0, 0, 0.3);
+  transition: all 0.8s ease;
+}
+
+.mini-form__button:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transition: all 0.8s ease;
+}
+
+@media (max-width: 767px) {
+  .mini-form {
+    width: 100%;
+  }
+}
+@media (max-width: 431px) {
+  .mini-form__title {
+    font-size: 22px;
+  }
+  .mini-form__pick-up-title {
+    font-size: 16px;
+  }
+  .mini-form__destination-title {
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .mini-form__pick-up-title {
+    font-size: 14px;
+  }
+  .mini-form__destination-title {
+    font-size: 14px;
+  }
+}

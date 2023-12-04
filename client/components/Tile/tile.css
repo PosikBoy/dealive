@@ -1,0 +1,41 @@
+.tile {
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d0c22;
+  padding: 20px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 992px) {
+  .tile {
+    height: 170px;
+    width: 170px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 431px) {
+  .tile {
+    height: 150px;
+    width: 150px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .tile {
+    height: 130px;
+    width: 130px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}

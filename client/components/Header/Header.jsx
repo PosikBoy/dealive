@@ -1,7 +1,7 @@
 "use client";
 import "./header.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [state, setState] = useState(false);
@@ -38,7 +38,7 @@ const Header = () => {
             <ul className="nav__list">
               <li>
                 <Link
-                  href="/"
+                  href="/order  "
                   className="header__link "
                   onClick={() => {
                     setState(!state);
