@@ -22,7 +22,7 @@ const MiniForm = observer(() => {
       <div className="mini-form__body">
         <div className="mini-form__title">Форма заказа</div>
         <div className="mini-form__pickup">
-          <div className="mini-form__pickup-title ">Где забрать</div>
+          <div className="mini-form__pickup-title">Где забрать</div>
           <input
             type="text"
             name="pickupAddress"

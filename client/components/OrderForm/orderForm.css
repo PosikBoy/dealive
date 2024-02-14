@@ -29,6 +29,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #417ef00c;
+  border-radius: 40px;
+  padding: 20px;
+  border-bottom: 1px solid black;
 }
 .order-form__pickup-title {
   font-size: 24px;
@@ -43,6 +47,7 @@
   padding: 12px;
   width: 100%;
   font-weight: bold;
+  transition: all 0.5s;
 }
 
 .order-form__pickup-properties {
@@ -64,6 +69,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #417ef00c;
+  border-radius: 40px;
+  padding: 20px;
+  border-bottom: 1px solid black;
 }
 .order-form__destination-title {
   font-size: 24px;
@@ -78,6 +87,25 @@
   padding: 12px;
   width: 100%;
   font-weight: bold;
+  transition: all 0.5s;
+}
+
+.order-form__pay-cash {
+  display: flex;
+  gap: 10px;
+  background-color: #417ef015;
+  border-radius: 10px;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.order-form__submit {
+  display: flex;
+  flex-direction: column;
+  background-color: #417ef010;
+  border-radius: 10px;
+  padding: 20px;
+  border-bottom: 1px solid black;
 }
 
 .order-form__destination-properties {
@@ -93,4 +121,55 @@
 .order-form__destination-note {
   height: 100px;
   margin-bottom: 20px;
+}
+
+.order-form__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #417ef010;
+  border-radius: 40px;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.info-field {
+  margin-top: 4px;
+  border-radius: 7px;
+  border-bottom: 1px solid black;
+  background: rgba(248, 60, 69, 0.13);
+  padding: 12px;
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.order-form__info-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.order-form__error {
+  color: red;
+  font-weight: bold;
+}
+
+.info-field:hover,
+.pickup-field:hover {
+  background: rgba(248, 60, 69, 0.384);
+}
+.destination-field:hover {
+  background: #417ef063;
+}
+
+.info-field:focus,
+.pickup-field:focus {
+  background: rgba(248, 60, 69, 0.411);
+}
+
+.destination-field:focus {
+  background: #417ef080;
+}
+textarea:focus {
+  outline: none;
 }

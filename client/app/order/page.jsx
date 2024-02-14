@@ -1,4 +1,4 @@
-import OrderForm from "@/components/OrderForm/OrderFormContainer";
+import OrderForm from "@/components/OrderForm/OrderForm";
 
 const Order = () => {
   return (

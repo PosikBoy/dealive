@@ -24,11 +24,9 @@
 .mini-form__destination {
   width: 100%;
 }
-.mini-form__pick-up-title,
+.mini-form__pickup-title,
 .mini-form__destination-title {
   color: #000;
-
-  font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -59,16 +57,6 @@
 .mini-form__link {
   color: black;
   font-weight: 600;
-}
-
-.field:hover {
-  background: rgba(255, 0, 0, 0.2);
-  transition: all 0.8s ease;
-}
-
-.field:focus {
-  background: rgba(255, 0, 0, 0.3);
-  transition: all 0.8s ease;
 }
 
 .mini-form__button:hover {

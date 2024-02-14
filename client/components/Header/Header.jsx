@@ -1,10 +1,25 @@
 "use client";
+import { CgProfile } from "react-icons/cg";
+
 import "./header.css";
 import Link from "next/link";
-import { useState } from "react";
-
-const Header = () => {
-  const [state, setState] = useState(false);
+import { useState, useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { useStores } from "@/stores/root-store-context";
+const Header = observer(() => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { profileInfo } = useStores();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      profileInfo.setIsLoggedIn(true);
+    } else {
+      profileInfo.setIsLoggedIn(false);
+    }
+  }, []);
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <header className="header">
       <div className="container">
@@ -12,91 +27,103 @@ const Header = () => {
           <div className="header__logo">
             <Link
               href="/"
-              className="header__link logo"
+              className="header__link"
               onClick={() => {
-                if (state) {
-                  setState(!state);
-                }
+                document.body.classList.remove("modal-open");
+                setIsOpen(false);
               }}
             >
               DEALIVE
             </Link>
           </div>
           <div
-            className={
-              state ? "header__burger active" : "header__burger closed"
-            }
+            className={`header__burger ${isOpen ? "open" : "closed"}`}
             onClick={() => {
-              setState(!state);
+              document.body.classList.toggle("modal-open");
+              toggleOpen();
             }}
           >
             <span></span>
           </div>
-          <nav
-            className={state ? "header__menu active" : "header__menu closed"}
-          >
-            <ul className="nav__list">
-              <li>
-                <Link
-                  href="/order  "
-                  className="header__link "
-                  onClick={() => {
-                    setState(!state);
-                  }}
-                >
-                  Сделать заказ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/smth"
-                  className="header__link"
-                  onClick={() => {
-                    setState(!state);
-                  }}
-                >
-                  Мои заказы
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/reviews"
-                  className="header__link"
-                  onClick={() => {
-                    setState(!state);
-                  }}
-                >
-                  Отзывы
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="header__link"
-                  onClick={() => {
-                    setState(!state);
-                  }}
-                >
-                  О нас
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/login"
-                  className="header__link"
-                  onClick={() => {
-                    setState(!state);
-                  }}
-                >
-                  Вход / Регистрация
-                </Link>{" "}
-              </li>
-            </ul>
+          <nav className="header__nav">
+            <Link href="/order" className="header__link">
+              Сделать заказ
+            </Link>
+            <Link href="/reviews" className="header__link">
+              Отзывы
+            </Link>
+            <Link href="/about" className="header__link">
+              О нас
+            </Link>
+            {profileInfo.isLoggedIn ? (
+              <Link href="/profile" className="header__link">
+                Профиль
+              </Link>
+            ) : (
+              <Link href="/login" className="header__link">
+                Вход
+              </Link>
+            )}
+          </nav>
+          <nav className={`header__mobile-nav ${isOpen ? "open" : "closed"}`}>
+            <Link
+              href="/order"
+              className="header__link"
+              onClick={() => {
+                document.body.classList.toggle("modal-open");
+                toggleOpen();
+              }}
+            >
+              Сделать заказ
+            </Link>
+            <Link
+              href="/reviews"
+              className="header__link"
+              onClick={() => {
+                document.body.classList.toggle("modal-open");
+                toggleOpen();
+              }}
+            >
+              Отзывы
+            </Link>
+            <Link
+              href="/about"
+              className="header__link"
+              onClick={() => {
+                document.body.classList.toggle("modal-open");
+                toggleOpen();
+              }}
+            >
+              О нас
+            </Link>
+            {profileInfo.isLoggedIn ? (
+              <Link
+                href="/profile"
+                className="header__link"
+                onClick={() => {
+                  document.body.classList.toggle("modal-open");
+                  toggleOpen();
+                }}
+              >
+                <CgProfile size={30} />
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className="header__link"
+                onClick={() => {
+                  document.body.classList.toggle("modal-open");
+                  toggleOpen();
+                }}
+              >
+                <CgProfile size={30} />
+              </Link>
+            )}
           </nav>
         </div>
       </div>
     </header>
   );
-};
+});
 
 export default Header;

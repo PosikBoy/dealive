@@ -1,0 +1,38 @@
+
+.sign-form {
+  padding: 30px;
+}
+
+.field {
+  margin-top: 4px;
+  border-radius: 7px;
+  border-bottom: 1px solid black;
+  background: rgba(255, 0, 0, 0.13);
+  padding: 12px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sign-form__row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.sign-in__button {
+  color: blanchedalmond;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(51, 44, 128);
+}
+
+.sign-form__invalid-data{
+  color: red;
+  font-weight: bold;
+}
